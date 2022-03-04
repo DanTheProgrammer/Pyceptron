@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import glob, os
 import pickle
-from PIL import Image as im
+from PIL import *
 
 os.chdir("dataset/")
 
@@ -15,23 +15,21 @@ weights = [0 for i in range(400)]
 dataset = []
 answers = []
 
-predictions = ["Circle","Rectangle"]
+predictions = ["Cat","Dog"]
 
 def sigmoid(x):
-    return -1/(1+pow(E,x))+0.5
+    return 1/(1+pow(E,-x))
 
 
 # Load dataset
-for file in glob.glob("*.png"):
+for file in glob.glob("*"):
     img = cv2.imread(file, 0)
     dataset.append((img / 255.0).flatten())
     
-    f = open(file[:-3]+"txt","r")
-    if f.read() == "1":
+    if "dog" in file:
         answers.append(1)
     else:
         answers.append(0)
-    f.close()
 
 for t in range(100):
     for i in range(len(dataset)):

@@ -6,9 +6,10 @@ import glob, os
 bias = 0
 weights = pickle.load(open( "weights.txt", "rb" ))
 
-img = cv2.imread("input.png", 0)
+img = cv2.imread("input.jpg", 0)
+img = cv2.resize(img,(20,20))
 activation = ((img / 255.0).flatten())
-predictions = ["Circle","Rectangle"]
+predictions = ["Cat","Dog"]
 
 l = []
 for i in range(400):
@@ -16,7 +17,7 @@ for i in range(400):
     l.append(n)
     out = sum(l)
 final = 0
-if (out < bias):   
+if (out < bias):
     final = 0
 elif (out > bias):
     final = 1
