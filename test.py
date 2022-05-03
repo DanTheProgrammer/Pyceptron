@@ -17,7 +17,7 @@ list = []
 for i in range(400):
     n = activation[i] * weights[i]
     list.append(n)
-    out = sum(l)
+    out = sum(list)
 final = 0
 if (out < bias):
     final = 0
