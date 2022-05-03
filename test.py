@@ -13,10 +13,10 @@ cv2.waitKey(0)
 activation = ((img / 255.0).flatten())
 predictions = ["Cat","Dog"]
 
-l = []
+list = []
 for i in range(400):
     n = activation[i] * weights[i]
-    l.append(n)
+    list.append(n)
     out = sum(l)
 final = 0
 if (out < bias):

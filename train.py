@@ -7,7 +7,6 @@ from PIL import *
 
 os.chdir("dataset/")
 
-E = 2.718
 activation = [1 for i in range(400)]
 bias = 0
 weights = [0 for i in range(400)]
