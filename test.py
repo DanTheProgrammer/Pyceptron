@@ -4,7 +4,7 @@ import numpy as np
 import glob, os
 
 bias = 0
-weights = pickle.load(open( "weights.txt", "rb" ))
+weights = pickle.load(open( "weights", "rb" ))
 
 img = cv2.imread("input.jpg", 0)
 img = cv2.resize(img,(20,20))
