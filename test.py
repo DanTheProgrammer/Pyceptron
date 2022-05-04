@@ -24,4 +24,4 @@ if (out < bias):
 elif (out > bias):
     final = 1
 
-print(predictions[final])
+print("Out:" + str(out) + " " + predictions[final])
