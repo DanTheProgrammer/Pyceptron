@@ -16,10 +16,6 @@ answers = []
 
 predictions = ["Cat","Dog"]
 
-def sigmoid(x):
-    return 1/(1+pow(E,-x))
-
-
 # Load dataset
 for file in glob.glob("*"):
     img = cv2.imread(file, 0)
